@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '';
 
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final arguments = (ModalRoute.of(context)!.settings.arguments) as Map;
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
 
 
     return Scaffold(
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             height: 50,
-            child: Text("Halo" + arguments['nama']),
+            child: Text("Halo " + arguments['nama']),
           ),
           Expanded(
             child: ListView.builder(
