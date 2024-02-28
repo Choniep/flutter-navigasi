@@ -2,26 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginPage extends StatefulWidget {
-  // const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  //controller
+  final _inputuser = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-
-    //controller
-    TextEditingController _inputuser = TextEditingController();
-
-    //variable
-    String username;
-
-    setState(() {
-      username = _inputuser.text;
-    });
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Login Page"),
@@ -47,7 +39,8 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    TextField(
+                    TextFormField(
+                      controller: _inputuser,
                       decoration: InputDecoration(
                           hintText: "Username", icon: Icon(Iconsax.user)),
                     ),
@@ -67,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     const EdgeInsets.only(left: 30.0, right: 30.0, top: 40),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/home-page', arguments: {'nama':_inputuser.text});
+                    Navigator.of(context).pushNamed('/home-page', arguments: {'nama': _inputuser.text});
                   },
                   color: Colors.red,
                   elevation: 0,
