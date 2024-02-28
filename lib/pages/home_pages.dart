@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             height: 50,
-            child: Text("Halo " + arguments['nama']),
+            child: Text("Halo " + arguments['nama'], style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),),
           ),
           Expanded(
             child: ListView.builder(
