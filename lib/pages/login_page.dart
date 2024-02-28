@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     const EdgeInsets.only(left: 30.0, right: 30.0, top: 40),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/home-page', arguments: _inputuser.text);
+                    Navigator.of(context).pushNamed('/home-page', arguments: {'nama':_inputuser.text});
                   },
                   color: Colors.red,
                   elevation: 0,

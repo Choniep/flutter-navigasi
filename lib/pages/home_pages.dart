@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String? username = (ModalRoute.of(context)?.settings.arguments) as String?;
+    final arguments = (ModalRoute.of(context)!.settings.arguments) as Map;
 
 
     return Scaffold(
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             height: 50,
-            child: Text(username != null ? "Hello, $username" : "Hello, Guest"),
+            child: Text("Halo" + arguments['nama']),
           ),
           Expanded(
             child: ListView.builder(
